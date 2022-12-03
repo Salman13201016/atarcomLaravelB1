@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CatController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\SubCatController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +32,5 @@ Route::post('/update', [CatController::class, 'update']);
 Route::get('/test',[TestController::class,'testShow'] );
 
 Route::get('/home',[HomeController::class,'homePageShow'] );
+
+Route::resource('/subcat',SubCatController::class );
