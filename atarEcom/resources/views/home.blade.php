@@ -391,16 +391,15 @@
           <nav class="yamm megamenu-horizontal">
             <ul class="nav">
               @foreach($data as $d1)
-                
-              @foreach($d1 as $d)
-              <li class="dropdown menu-item"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-shopping-bag" aria-hidden="true"></i>{{$d->category->cat_name}}</a>
-              @endforeach
+              @php $first = $d1->first(); @endphp
+              <li class="dropdown menu-item"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-shopping-bag" aria-hidden="true"></i>{{$first->category->cat_name}}</a>
+              
                 <ul class="dropdown-menu mega-menu">
                   <li class="yamm-content">
                     <div class="row">
                       <div class="col-sm-12 col-md-3">
                         <ul class="links list-unstyled">
-                        @foreach($d1 as $d)
+                         @foreach($d1 as $d)
                           <li><a href="#">{{$d->sub_cat_name}}</a></li>
                         @endforeach
                         </ul>
@@ -415,7 +414,7 @@
                     </div>
                     <!-- /.row --> 
                   </li>
-                  
+                 
                 @endforeach
                   <!-- /.yamm-content -->
                 </ul>
