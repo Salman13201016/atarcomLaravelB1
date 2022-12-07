@@ -5,6 +5,7 @@ use App\Http\Controllers\CatController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SubCatController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,3 +35,4 @@ Route::get('/test',[TestController::class,'testShow'] );
 Route::get('/home',[HomeController::class,'homePageShow'] );
 
 Route::resource('/subcat',SubCatController::class );
+Route::resource('/product',ProductController::class );

@@ -389,8 +389,9 @@
         <div class="side-menu animate-dropdown outer-bottom-xs">
           <div class="head"><i class="icon fa fa-align-justify fa-fw"></i> Categories</div>
           <nav class="yamm megamenu-horizontal">
+          @foreach($data as $d1)
             <ul class="nav">
-              @foreach($data as $d1)
+              
               @php $first = $d1->first(); @endphp
               <li class="dropdown menu-item"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon fa fa-shopping-bag" aria-hidden="true"></i>{{$first->category->cat_name}}</a>
               
@@ -415,12 +416,13 @@
                     <!-- /.row --> 
                   </li>
                  
-                @endforeach
+               
                   <!-- /.yamm-content -->
                 </ul>
                 <!-- /.dropdown-menu --> </li>
               <!-- /.menu-item -->
             </ul>
+            @endforeach
             <!-- /.nav --> 
           </nav>
           <!-- /.megamenu-horizontal --> 
