@@ -10,6 +10,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Majestic Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('admin_assets/vendors/mdi/css/materialdesignicons.min.css')}}" />
@@ -296,8 +297,9 @@
                         <select
                          
                           class="form-control"
-                          id="exampleInputUsername1"
+                          id="sel_cat"
                           name ="cat_id"
+                          
                         >
                             <option>Select Category</option>
                             @foreach($cat_data as $d)
@@ -306,12 +308,13 @@
                         </select>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputUsername1">Select Category</label>
+                        <label for="exampleInputUsername1">Select Sub Category</label>
                         <select
                          
                           class="form-control"
-                          id="exampleInputUsername1"
-                          name ="cat_id"
+                          id="select_sub"
+                          name ="sub_cat_id"
+                          
                         >
                             <option>Select Sub Category</option>
                             @foreach($cat_data as $d)
@@ -325,8 +328,9 @@
                           type="text"
                           class="form-control"
                           id="exampleInputUsername1"
-                          name ="add_sub_cat"
-                          placeholder="Enter Product Sub Category Name"
+                          name ="prod_name"
+                          placeholder="Enter Product Name"
+                          disabled
                         />
                       </div>
                       <div class="form-group">
@@ -335,8 +339,9 @@
                           type="text"
                           class="form-control"
                           id="exampleInputUsername1"
-                          name ="add_sub_cat"
-                          placeholder="Enter Product Sub Category Name"
+                          name ="prod_description"
+                          placeholder="Enter Product Description"
+                          disabled
                         />
                       </div>
 
@@ -346,7 +351,8 @@
                           type="file"
                           class="form-control"
                           id="exampleInputUsername1"
-                          name ="add_sub_cat"
+                          name ="prod_image"
+                          disabled
                          
                         />
                 </div>
@@ -357,10 +363,11 @@
                           type="text"
                           class="form-control"
                           id="exampleInputUsername1"
-                          name ="add_sub_cat"
+                          name ="weight1"
                           placeholder="Enter Product Weight (E.g, 3ML, 6ML)"
+                          disabled
                         />
-                        <a href="#" id ="add_more_weight" class="btn btn-primary me-2">
+                        <a href="#" id ="add_more_weight" class="btn btn-primary me-2" >
                         Add More
                         </a>
                         </div>
@@ -373,8 +380,9 @@
                           type="text"
                           class="form-control"
                           id="exampleInputUsername1"
-                          name ="add_sub_cat"
+                          name ="prod_price1"
                           placeholder="Enter Product Price (E.g, 3ML, 6ML)"
+                          disabled
                         />
                         </div>
                         <div class="form-group weight_price_div">

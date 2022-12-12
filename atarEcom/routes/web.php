@@ -35,4 +35,5 @@ Route::get('/test',[TestController::class,'testShow'] );
 Route::get('/home',[HomeController::class,'homePageShow'] );
 
 Route::resource('/subcat',SubCatController::class );
+Route::get('product/getsub/{id}', [ProductController::class,'getSubCat']);
 Route::resource('/product',ProductController::class );

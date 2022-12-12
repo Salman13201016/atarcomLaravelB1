@@ -28,6 +28,16 @@ class ProductController extends Controller
         return view('admin.product',compact('cat_data','subcats'));
     }
 
+    public function getSubCat($id){
+        
+        $subcats = SubCatModel::join('categories', 'subcats.cat_id', '=','categories.id')
+            ->select('subcats.*', 'categories.cat_name')->where('categories.id',$id)
+            ->get();
+            return response()->json($subcats);
+            // return response()->json($subcats, 200, ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
+        // JSON_UNESCAPED_UNICODE);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -47,6 +57,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        echo "Welcome";
     }
 
     /**
@@ -58,6 +69,7 @@ class ProductController extends Controller
     public function show($id)
     {
         //
+
     }
 
     /**
@@ -93,4 +105,6 @@ class ProductController extends Controller
     {
         //
     }
+
+
 }
