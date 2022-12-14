@@ -301,7 +301,7 @@
                           name ="cat_id"
                           
                         >
-                            <option>Select Category</option>
+                            <option value="zero">Select Category</option>
                             @foreach($cat_data as $d)
                             <option value="{{$d->id}}">{{$d->cat_name}}</option>
                             @endforeach
@@ -311,9 +311,10 @@
                         <label for="exampleInputUsername1">Select Sub Category</label>
                         <select
                          
-                          class="form-control"
+                          class="form-control enable_tag"
                           id="select_sub"
                           name ="sub_cat_id"
+                          disabled
                           
                         >
                             <option>Select Sub Category</option>
@@ -326,8 +327,8 @@
                         <label for="exampleInputUsername1">Product Name</label>
                         <input
                           type="text"
-                          class="form-control"
-                          id="exampleInputUsername1"
+                          class="form-control enable_tag"
+                          id="prod_name"
                           name ="prod_name"
                           placeholder="Enter Product Name"
                           disabled
@@ -337,8 +338,8 @@
                         <label for="exampleInputUsername1">Product Description</label>
                         <input
                           type="text"
-                          class="form-control"
-                          id="exampleInputUsername1"
+                          class="form-control enable_tag"
+                          id="prod_desc"
                           name ="prod_description"
                           placeholder="Enter Product Description"
                           disabled
@@ -349,8 +350,8 @@
                         <label for="exampleInputUsername1">Product Image</label>
                         <input
                           type="file"
-                          class="form-control"
-                          id="exampleInputUsername1"
+                          class="form-control enable_tag"
+                          id="prod_image"
                           name ="prod_image"
                           disabled
                          
@@ -361,14 +362,14 @@
                         <div class="d-flex">
                         <input
                           type="text"
-                          class="form-control"
+                          class="form-control enable_tag"
                           id="exampleInputUsername1"
-                          name ="weight1"
+                          name ="weight[]"
                           placeholder="Enter Product Weight (E.g, 3ML, 6ML)"
                           disabled
                         />
-                        <a href="#" id ="add_more_weight" class="btn btn-primary me-2" >
-                        Add More
+                        <a href="#" id ="add_more_weight" class="enable_tag btn btn-primary me-2" >
+                        <buttton disabled>Add More</button>
                         </a>
                         </div>
                         <div class="form-group weight_div">
@@ -378,16 +379,16 @@
                         <div class="d-flex">
                         <input
                           type="text"
-                          class="form-control"
+                          class="form-control enable_tag"
                           id="exampleInputUsername1"
-                          name ="prod_price1"
+                          name ="prod_price[]"
                           placeholder="Enter Product Price (E.g, 3ML, 6ML)"
                           disabled
                         />
                         </div>
-                        <div class="form-group weight_price_div">
+                        <div class="form-group weight_price_div ">
                         </div>
-                      <button type="submit" class="btn btn-primary me-2">
+                      <button type="button" class="btn btn-primary me-2" id="sub_prod">
                         Submit
                       </button>
                     </form>
