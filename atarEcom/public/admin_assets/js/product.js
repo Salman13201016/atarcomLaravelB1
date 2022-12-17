@@ -7,16 +7,22 @@
 $(document).ready(function(){
     count = 1;
     $("#add_more_weight").click(function(){
-        // if($("#sel_cat").attr('disabled')){
-        //     dummy = 0;
-        // }
+        
         // else{
             count = count+1
-            var weight_div = '<label for="exampleInputUsername1">Add Weight '+count+'</label><div class="d-flex"><input type="text" class="form-control" id="exampleInputUsername1" name ="weight[]" placeholder="Enter Product Weight (E.g, 3ML, 6ML)"/>'
-            var weight_price = '<div class="form-group"><label for="exampleInputUsername1">Add Price for Weight '+count+'</label> <div class="d-flex"> <input type="text" class="form-control " id="exampleInputUsername1" name ="prod_price[]" placeholder="Enter Product Price (E.g, 3ML, 6ML)"/>'
+            var weight_div = '<label for="exampleInputUsername1">Add Weight '+count+'</label><div class="d-flex"><input type="text" class="form-control enable_tag" id="exampleInputUsername1" name ="weight[]" placeholder="Enter Product Weight (E.g, 3ML, 6ML)" disabled/>'
+
+            var weight_price = '<div class="form-group" ><label for="exampleInputUsername1">Add Price for Weight '+count+'</label> <div class="d-flex"> <input type="text" class="form-control enable_tag" id="exampleInputUsername1" name ="prod_price[]" placeholder="Enter Product Price (E.g, 3ML, 6ML)" disabled/>'
             $(".weight_div").append(weight_div);
             $(".weight_price_div").append(weight_price);
         // }
+
+        if($("#sel_cat option:selected").val()=='zero'){
+            $('.enable_tag').prop("disabled", true);
+        }
+        else{
+            $('.enable_tag').prop("disabled", false);
+        }
         
     });
 
@@ -66,22 +72,49 @@ $(document).ready(function(){
     $("#sub_prod").click(function(e){
         e.preventDefault()
         console.log("yes");
+        var cat_id = $('#sel_cat option:selected').val();
+        var sub_cat_id = $('#select_sub option:selected').val();
         prod_name = $("#prod_name").val()
         prod_image = $("#prod_image").val()
         prod_desc = $("#prod_desc").val()
-        prod_price = $('input[name="price[]"]').map(function() {
+        prod_price = $('input[name="prod_price[]"]').map(function() {
             return this.value
         }).get()
         var prod_weight = $('input[name="weight[]"]').map(function() {
             return this.value
         }).get()
-        console.log(prod_weight.toString())
+        // console.log(prod_weight.toString())
 
         weight_value = prod_weight.toString()
-        weight_value = weight_value.replace(",", ";");
+        weight_value = weight_value.replaceAll(",", "/");
         price_value = prod_price.toString()
-        price_value = price_value.replace(",", ";");
-        console.log(weight_value);
+        price_value = price_value.replaceAll(",", "/");
+        console.log(typeof weight_value);
+        console.log( typeof price_value);
+
+        $.ajax({
+            url:'product',
+            
+            data:{
+                'cat_id':cat_id,
+                'sub_cat_id':sub_cat_id,
+                'prod_name':prod_name,
+                'prod_image':prod_image,
+                'prod_desc':prod_desc,
+                'prod_image':prod_image,
+                'weight_value':weight_value,
+                'price_value':price_value
+            },
+            type:'post',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            // contentType: "charset=utf-8",
+            success: function(response){
+                
+               console.log(response);
+            }
+        });
 
         // for(var i = 0 ; i<values.toString().length;i++){
         //     weight_val = values.toString()[i];

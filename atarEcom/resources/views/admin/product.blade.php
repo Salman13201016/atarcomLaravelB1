@@ -290,7 +290,7 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Main Category form</h4>
-                    <form class="forms-sample" method="post" action="#">
+                    <form class="forms-sample" method="post" action="#" enctype="multipart/form-data">
                       @csrf
                       <div class="form-group">
                         <label for="exampleInputUsername1">Select Category</label>
@@ -386,6 +386,7 @@
                           disabled
                         />
                         </div>
+</div>
                         <div class="form-group weight_price_div ">
                         </div>
                       <button type="button" class="btn btn-primary me-2" id="sub_prod">

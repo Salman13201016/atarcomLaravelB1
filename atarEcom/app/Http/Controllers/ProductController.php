@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\SubCatModel;
 use App\Models\CatModel;
+use App\Models\ProductModel;
 
 class ProductController extends Controller
 {
@@ -54,10 +55,23 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
-        echo "Welcome";
+        
+        $product= new ProductModel();
+
+        $product->cat_id = $req->cat_id;
+        $product->sub_cat_id = $req->sub_cat_id;
+        $product->prod_name = $req->prod_name;
+        $product->prod_desc = $req->prod_desc;
+        $product->prod_image = $req->prod_image;
+        $product->prod_weight = "1;2";
+        $product->prod_price ="2;4";
+        echo('$req->price_value');
+        echo "asdasd"."$product->prod_weight";
+        $product->save();
+
+       
     }
 
     /**
