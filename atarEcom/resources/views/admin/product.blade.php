@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{{asset('admin_assets/css/style.css')}}" />
     <!-- endinject -->
     <link rel="shortcut icon" href="{{asset('admin_assets/images/favicon.png')}}" />
+   
   </head>
 
   <body>
@@ -336,14 +337,14 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputUsername1">Product Description</label>
-                        <input
+                        <textarea
                           type="text"
                           class="form-control enable_tag"
                           id="prod_desc"
                           name ="prod_description"
                           placeholder="Enter Product Description"
                           disabled
-                        />
+                        /></textarea>
                       </div>
 
                       <div class="form-group">
@@ -494,7 +495,13 @@
     <!-- Custom js for this page-->
     <script src="{{asset('admin_assets/js/file-upload.js')}}"></script>
     <script src="{{asset('admin_assets/js/product.js')}}"></script>
+    <script src="{{asset('admin_assets/js/jquery-3.5.1.slim.min.js')}}"></script>
     <!-- End custom js for this page-->
+
+    <!-- summernote -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
   </body>
 </html>
 

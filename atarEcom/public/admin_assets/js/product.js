@@ -86,11 +86,11 @@ $(document).ready(function(){
         // console.log(prod_weight.toString())
 
         weight_value = prod_weight.toString()
-        weight_value = weight_value.replaceAll(",", "/");
+        weight_value = weight_value.replaceAll(",", ";");
         price_value = prod_price.toString()
-        price_value = price_value.replaceAll(",", "/");
-        console.log(typeof weight_value);
-        console.log( typeof price_value);
+        price_value = price_value.replaceAll(",", ";");
+        // console.log(typeof weight_value);
+        // console.log( typeof price_value);
 
         $.ajax({
             url:'product',

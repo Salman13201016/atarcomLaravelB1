@@ -65,10 +65,10 @@ class ProductController extends Controller
         $product->prod_name = $req->prod_name;
         $product->prod_desc = $req->prod_desc;
         $product->prod_image = $req->prod_image;
-        $product->prod_weight = "1;2";
-        $product->prod_price ="2;4";
-        echo('$req->price_value');
-        echo "asdasd"."$product->prod_weight";
+        $product->prod_weight ="$req->weight_value";
+        $product->prod_price ="$req->price_value";
+        // echo('$req->price_value');
+        // echo "asdasd"."$product->prod_weight";
         $product->save();
 
        
