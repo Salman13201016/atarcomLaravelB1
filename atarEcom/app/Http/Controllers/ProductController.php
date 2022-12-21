@@ -59,17 +59,31 @@ class ProductController extends Controller
     {
         
         $product= new ProductModel();
+        $name = $req->file('prod_image')->getClientOriginalName();
+        $cat_id  = $req->input('cat_id');
+        $sub_cat_id  = $req->input('sub_cat_id');
+        $prod_name  = $req->input('prod_name');
+        $prod_desc  = $req->input('prod_desc');
+        $prod_desc  = $req->input('prod_desc');
+        $prod_weight = $req->input('weight');
+        var_dump($prod_weight);
+        $prod_price = $req->input('price[]');
+ 
+        $path = $req->file('prod_image')->store('public/images');
+        // $product->cat_id = $req->cat_id;
+        // $product->sub_cat_id = $req->sub_cat_id;
+        // $product->prod_name = $req->prod_name;
+        // $product->prod_desc = $req->prod_desc;
+        // $product->prod_image = $req->prod_image;
 
-        $product->cat_id = $req->cat_id;
-        $product->sub_cat_id = $req->sub_cat_id;
-        $product->prod_name = $req->prod_name;
-        $product->prod_desc = $req->prod_desc;
-        $product->prod_image = $req->prod_image;
-        $product->prod_weight ="$req->weight_value";
-        $product->prod_price ="$req->price_value";
+        // // var_dump($req->prod_image->getClientOriginalName()); 
+        // $path = $req->prod_image->store('public/images');
+ 
+        // $product->prod_weight ="$req->weight_value";
+        // $product->prod_price ="$req->price_value";
         // echo('$req->price_value');
         // echo "asdasd"."$product->prod_weight";
-        $product->save();
+        // $product->save();
 
        
     }

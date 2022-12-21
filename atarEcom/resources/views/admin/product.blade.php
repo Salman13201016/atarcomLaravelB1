@@ -291,7 +291,7 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Main Category form</h4>
-                    <form class="forms-sample" method="post" action="#" enctype="multipart/form-data">
+                    <form class="forms-sample" method="post" id="submit_form" action="javascript:void(0)" enctype="multipart/form-data">
                       @csrf
                       <div class="form-group">
                         <label for="exampleInputUsername1">Select Category</label>
@@ -365,7 +365,7 @@
                           type="text"
                           class="form-control enable_tag"
                           id="exampleInputUsername1"
-                          name ="weight[]"
+                          name ="weight"
                           placeholder="Enter Product Weight (E.g, 3ML, 6ML)"
                           disabled
                         />
@@ -390,7 +390,7 @@
 </div>
                         <div class="form-group weight_price_div ">
                         </div>
-                      <button type="button" class="btn btn-primary me-2" id="sub_prod">
+                      <button type="submit" class="btn btn-primary me-2" id="sub_prod">
                         Submit
                       </button>
                     </form>
@@ -489,6 +489,8 @@
     <!-- End custom js for this page-->
 
     <script src="{{asset('admin_assets/js/jquery.cookie.js')}}" type="text/javascript"></script>
+
+    
     <!-- endinject -->
     <!-- inject:js -->
 
@@ -496,11 +498,12 @@
     <script src="{{asset('admin_assets/js/file-upload.js')}}"></script>
     <script src="{{asset('admin_assets/js/product.js')}}"></script>
     <script src="{{asset('admin_assets/js/jquery-3.5.1.slim.min.js')}}"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <!-- End custom js for this page-->
 
     <!-- summernote -->
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script> -->
 
   </body>
 </html>
