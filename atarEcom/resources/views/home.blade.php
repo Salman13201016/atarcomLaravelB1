@@ -1294,11 +1294,14 @@
             <div class="tab-pane in active" id="all">
               <div class="product-slider">
                 <div class="owl-carousel home-owl-carousel custom-carousel owl-theme" data-item="4">
+                  
+                <!-- Getting Data From Database Dynamiclly  -->
+                @foreach($products as $product)
                   <div class="item item-carousel">
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="detail.html"><img  src="assets/images/products/p1.jpg" alt=""></a> </div>
+                          <div class="image"> <a href="detail.html"><img  src="{{asset('storage/images/'.$product->prod_image)}}" alt=""></a> </div>
                           <!-- /.image -->
                           
                           <div class="tag new"><span>new</span></div>
@@ -1306,7 +1309,7 @@
                         <!-- /.product-image -->
                         
                         <div class="product-info text-left">
-                          <h3 class="name"><a href="detail.html">Floral Print Buttoned</a></h3>
+                          <h3 class="name"><a href="detail.html">{{$product->prod_name}}</a></h3>
                           <div class="rating rateit-small"></div>
                           <div class="description"></div>
                           <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
@@ -1330,13 +1333,13 @@
                         <!-- /.cart --> 
                       </div>
                       <!-- /.product --> 
-                      
                     </div>
                     <!-- /.products --> 
                   </div>
                   <!-- /.item -->
+                @endforeach
                   
-                  <div class="item item-carousel">
+                  <!-- <div class="item item-carousel">
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
@@ -1375,10 +1378,10 @@
                       
                     </div>
                     <!-- /.products --> 
-                  </div>
+                  </div> -->
                   <!-- /.item -->
                   
-                  <div class="item item-carousel">
+                  <!-- <div class="item item-carousel">
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
@@ -1417,10 +1420,10 @@
                       
                     </div>
                     <!-- /.products --> 
-                  </div>
+                  </div> -->
                   <!-- /.item -->
                   
-                  <div class="item item-carousel">
+                  <!-- <div class="item item-carousel">
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
@@ -1459,10 +1462,10 @@
                       
                     </div>
                     <!-- /.products --> 
-                  </div>
+                  </div> -->
                   <!-- /.item -->
                   
-                  <div class="item item-carousel">
+                  <!-- <div class="item item-carousel">
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
@@ -1501,10 +1504,10 @@
                       
                     </div>
                     <!-- /.products --> 
-                  </div>
+                  </div> -->
                   <!-- /.item -->
                   
-                  <div class="item item-carousel">
+                  <!-- <div class="item item-carousel">
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
@@ -1543,8 +1546,8 @@
                       
                     </div>
                     <!-- /.products --> 
-                  </div>
-                  <!-- /.item --> 
+                  </div> -->
+                  <!-- /.item  -->
                 </div>
                 <!-- /.home-owl-carousel --> 
               </div>

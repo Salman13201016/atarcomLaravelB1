@@ -64,13 +64,15 @@ class ProductController extends Controller
         $sub_cat_id  = $req->input('sub_cat_id');
         $prod_name  = $req->input('prod_name');
         $prod_desc  = $req->input('prod_description');
-        $prod_weight = $req->input('weight');
-        $prod_price = $req->input('price');
+        $prod_weight = $req->weight;
+        $prod_price = $req->price;
  
-        $path = $req->file('prod_image')->store('public/images');
+        $path = $req->file('prod_image')->storeAs('public/images', $name);
 
         // Code changed By Joy
-        print_r($req->all());
+        print_r($req->weight);
+
+
         $product->cat_id = $cat_id;
         $product->sub_cat_id = $sub_cat_id;
         $product->prod_name = $prod_name;

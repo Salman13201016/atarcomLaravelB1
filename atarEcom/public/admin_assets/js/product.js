@@ -10,7 +10,7 @@ $(document).ready(function(){
         
         // else{
             count = count+1
-            var weight_div = '<label for="exampleInputUsername1">Add Weight '+count+'</label><div class="d-flex"><input type="text" class="form-control enable_tag" id="exampleInputUsername1" name ="weight" placeholder="Enter Product Weight (E.g, 3ML, 6ML)" disabled/>'
+            var weight_div = '<label for="exampleInputUsername1">Add Weight '+count+'</label><div class="d-flex"><input type="text" class="form-control enable_tag" id="exampleInputUsername1" name ="weight[]" placeholder="Enter Product Weight (E.g, 3ML, 6ML)" disabled/>'
 
             var weight_price = '<div class="form-group" ><label for="exampleInputUsername1">Add Price for Weight '+count+'</label> <div class="d-flex"> <input type="text" class="form-control enable_tag" id="exampleInputUsername1" name ="prod_price[]" placeholder="Enter Product Price (E.g, 3ML, 6ML)" disabled/>'
             $(".weight_div").append(weight_div);
@@ -98,7 +98,7 @@ $(document).ready(function(){
         // price_value = price_value.replaceAll(",", ";");
         // console.log(typeof weight_value);
         // console.log( typeof price_value);
-
+        
         $.ajax({
             url:"product",
             type:'post',
@@ -114,7 +114,9 @@ $(document).ready(function(){
             
             // contentType: "charset=utf-8",
             success: function(response){
-                
+                $( '#submit_form' ).each(function(){
+                    this.reset();
+                });
                console.log(response);
             }
         });
