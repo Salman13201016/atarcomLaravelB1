@@ -72,6 +72,12 @@ $(document).ready(function(){
     $("#submit_form").submit(function(e){
         e.preventDefault()
         var formData = new FormData(this);
+        var prod_weight =  $("input[name='weight[]']").map(function(){return $(this).val();}).get().toString();
+        var prod_price = $("input[name='prod_price[]']").map(function(){return $(this).val();}).get().toString();
+        formData.append("weight", prod_weight);
+        formData.append("price", prod_price);
+
+        
         // console.log("yes");
         // var cat_id = $('#sel_cat option:selected').val();
         // var sub_cat_id = $('#select_sub option:selected').val();

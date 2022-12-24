@@ -365,7 +365,7 @@
                           type="text"
                           class="form-control enable_tag"
                           id="exampleInputUsername1"
-                          name ="weight"
+                          name ="weight[]"
                           placeholder="Enter Product Weight (E.g, 3ML, 6ML)"
                           disabled
                         />

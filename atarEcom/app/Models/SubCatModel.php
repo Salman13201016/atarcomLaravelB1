@@ -11,6 +11,6 @@ class SubCatModel extends Model
     protected $table = "subcats";
 
     function category(){
-        return $this->belongsTo(CatModel::class,1);
+        return $this->belongsTo(CatModel::class,'cat_id');
     }
 }
